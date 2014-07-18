@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
     role.nil? ? false : ROLES.index(base_role.to_s) <= ROLES.index(role)
   end
 
+  private
+
   def set_member
     self.role = 'member'
   end
