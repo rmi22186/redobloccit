@@ -10,7 +10,7 @@ topics = []
     )
 end
 
-rand(4..10).times do
+(10).times do
   password = Faker::Lorem.characters(10)
   u = User.new(
     name: Faker::Name.name, 
@@ -70,5 +70,6 @@ u.save
 
 puts "Seed Finished"
 puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
