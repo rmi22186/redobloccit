@@ -16,6 +16,9 @@
     <% if can? :edit, @post %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-mini' %>
     <% end %>
+    <% if can? :destroy, @post %>
+      <%= link_to "Delete", [@topic, @post], method: :delete, class: 'btn btn-mini btn-danger', confirm: "Are you sure ou want to delete this post" %>
+    <% end %>
   </div>
 </div>
     <% if can? :create, Comment %>
