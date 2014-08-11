@@ -9,8 +9,10 @@
     <%= markdown @post.body %></p>
     <%= image_tag(@post.image.url) if @post.image? %>
     <hr/> 
-    <h2 class='js-comments-count'><%= pluralize(@post.comments.count, 'comment') %></h2>
-    <%= render partial: 'comments/comment', collection: @comments %>
+    <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
+      <div class="js-comments">  
+        <%= render partial: 'comments/comment', collection: @comments %>
+      </div>
   </div>
   <div class="span4">
     <% if can? :edit, @post %>
