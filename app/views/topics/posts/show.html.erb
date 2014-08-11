@@ -8,7 +8,8 @@
     </small>
     <%= markdown @post.body %></p>
     <%= image_tag(@post.image.url) if @post.image? %>
-    
+    <hr/> 
+    <h2 class='js-comments-count'><%= pluralize(@post.comments.count, 'comment') %></h2>
     <%= render partial: 'comments/comment', collection: @comments %>
   </div>
   <div class="span4">
@@ -32,7 +33,7 @@
   </div>
 </div>
     <% if can? :create, Comment %>
-    <hr/>
+      <hr/>
     <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
     <br/>
     <div class="js-new-comment hide">
