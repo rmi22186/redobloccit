@@ -27,6 +27,7 @@ include Sprockets::Helpers::RailsHelper
 
   # Process files as they are uploaded:
   process :resize_to_fill => [200, 200]
+  process :resize_to_fill => [90, 90]
   #
   # def scale(width, height)
   #   # do something
