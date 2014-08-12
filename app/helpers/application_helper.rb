@@ -30,4 +30,10 @@ module ApplicationHelper
     [topic, post, comment]
   end
   
+def post_url_helper(comment)
+    post = comment.post
+    topic = post.topic
+    [topic, post]
+  end
+
 end
